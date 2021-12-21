@@ -58,8 +58,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message': //訊息觸發
             $message = $event['message'];
             switch ($message['type']) {
-                case 'text': //訊息為文字 getPlacesAPI.php
-                    require_once('includes/getPlacesAPI.php'); //
+                case 'text': //訊息為文字
                     require_once('includes/text.php'); //Type: Text
                     require_once('includes/image.php'); //Type: Image
                     require_once('includes/video.php'); //Type: Video
