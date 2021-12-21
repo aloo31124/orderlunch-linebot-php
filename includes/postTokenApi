@@ -8,7 +8,7 @@ if ($message['text'] == "post token") {
         'messages' => array(
             array(
                 'type' => 'text', 
-                'text' => "取得api: ".getToken()
+                'text' => "取得api: "
             )
         )
     ));
