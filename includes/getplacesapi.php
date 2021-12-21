@@ -7,7 +7,7 @@ if ($message['text'] == "get api") {
         'messages' => array(
             array(
                 'type' => 'text', 
-                'text' => "取得api: " + file_get_contents("https://googleplacesapi.herokuapp.com/places") 
+                'text' => "取得api: ".file_get_contents("https://googleplacesapi.herokuapp.com/places") 
             )
         )
     ));
