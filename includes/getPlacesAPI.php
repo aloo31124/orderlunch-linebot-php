@@ -8,7 +8,7 @@ if (strtolower($message['text'] == "get api") {
         'messages' => array(
             array(
                 'type' => 'text', 
-                'text' => "取得 google place 地址: " + file_get_contents($url)
+                'text' => "取得 google place 地址: "
             )
         )
     ));
