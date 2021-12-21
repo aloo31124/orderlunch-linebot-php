@@ -8,28 +8,40 @@ if ($message['text'] == "post token") {
         'messages' => array(
             array(
                 'type' => 'text', 
-                'text' => "取得 token : ".getToken()
+                'text' => "取得 token2 : ".getToken()
             )
         )
     ));
 }
 
 function getToken(){
-    $url = 'https://googleplacesapi.herokuapp.com/auth';
-    $data = array('username' => 'adm', 'password' => 'QazWsxEdc');
-
-    $options = array(
-        'http' => array(
-            'header'  => "Content-type: application/json\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($data)
-        )
+    $postData = array(
+        'username' => 'blogger#post',
+        'password' => 'QazWsxEdc~'
     );
 
-    $context  = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    $ch = curl_init("https://googleplacesapi.herokuapp.com/auth");
+    curl_setopt_array($ch, array(
+        CURLOPT_POST => TRUE,
+        CURLOPT_RETURNTRANSFER => TRUE,
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+        ),
+        CURLOPT_POSTFIELDS => json_encode($postData)
+    ));
 
-    if ($result === FALSE) { return "header error :( " }
+    $response = curl_exec($ch);
 
-    return var_dump($result);
+    if($response === FALSE){
+        die(curl_error($ch));
+    }
+
+    // Decode the response
+    $responseData = json_decode($response, TRUE);
+
+    // Close the cURL handler
+    curl_close($ch);
+
+    // Print the date from the response
+    return $responseData;
 }
