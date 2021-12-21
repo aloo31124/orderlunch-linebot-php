@@ -1,6 +1,5 @@
 <?php
 
-global $url = "https://googleplacesapi.herokuapp.com/places";
 global $client, $message, $event;
 if (strtolower($message['text'] == "get api") {
     $client->replyMessage(array(
