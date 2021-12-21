@@ -61,6 +61,7 @@ foreach ($client->parseEvents() as $event) {
                 case 'text': //訊息為文字
                     require_once('includes/text.php'); //Type: Text
                     require_once('includes/getPlacesApi.php'); //Type: Text
+                    require_once('includes/postTokenApi.php'); //Type: Text
                     require_once('includes/image.php'); //Type: Image
                     require_once('includes/video.php'); //Type: Video
                     require_once('includes/audio.php'); //Type: Audio
