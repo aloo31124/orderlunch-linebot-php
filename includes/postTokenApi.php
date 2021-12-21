@@ -43,5 +43,5 @@ function getToken(){
     curl_close($ch);
 
     // Print the date from the response
-    return $responseData['published'];
+    return $responseData['token'];
 }
