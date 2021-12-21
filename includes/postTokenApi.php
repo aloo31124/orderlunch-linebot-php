@@ -16,7 +16,7 @@ if ($message['text'] == "post token") {
 
 function getToken(){
     $postData = array(
-        'username' => 'blogger#post',
+        'username' => 'adm',
         'password' => 'QazWsxEdc~'
     );
 
@@ -43,5 +43,5 @@ function getToken(){
     curl_close($ch);
 
     // Print the date from the response
-    return $responseData['token'];
+    return $responseData;
 }
