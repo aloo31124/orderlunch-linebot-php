@@ -26,7 +26,7 @@ function postPlaces(){
         CURLOPT_RETURNTRANSFER => TRUE,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: Bearer '.getToken()
+            'Authorization: basic '.getToken()
         ),
         CURLOPT_POSTFIELDS => json_encode($postData)
     ));
