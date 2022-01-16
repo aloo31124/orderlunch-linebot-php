@@ -1,7 +1,7 @@
 <?php
 
 global $client, $message, $event;
-if (strtolower($message['text']) == "get line bot server inside ip" ||  $message['text']) == "get server inside ip" || $message['text'] == "get server ip") {
+if (strtolower($message['text']) == "get ip" ||  $message['text']) == "get server inside ip" || $message['text'] == "get server ip") {
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
         'messages' => array(
