@@ -7,7 +7,7 @@ if (strtolower($message['text']) == "get line bot server inside ip" ||  $message
         'messages' => array(
             array(
                 'type' => 'text', 
-                'text' => "get line bot server inside ip : ".$_SERVER['HTTP_HOST']
+                'text' => "get line bot server inside ip : "
             )
         )
     ));
