@@ -60,6 +60,7 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text': //訊息為文字
                     require_once('includes/text.php'); //Type: Text
+                    require_once('includes/getEvent.php')
                     require_once('includes/getPlacesApi.php');
                     require_once('includes/getUserApi.php');
                     require_once('includes/postTokenApi.php');
