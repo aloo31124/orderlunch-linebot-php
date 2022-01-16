@@ -7,7 +7,7 @@ if (strtolower($message['text']) == "get event" || $message['text'] == "取得�
         'messages' => array(
             array(
                 'type' => 'text',
-                'text' => " event : 測試!!!"
+                'text' => " event : ".json_encode($event)
             )
         )
     ));
