@@ -134,21 +134,41 @@ class LINEBotTiny
 
     public function postFoodServer()
     {
-        $header = array(
-            'Content-Type: application/json'
+        $postData = array(
+            'file1' => 'test1',
+            'file2' => 'test2~'
         );
+    
+        $ch = curl_init("http://192.168.11.96:8081/ehrd/line-bot");
+        curl_setopt_array($ch, array(
+            CURLOPT_POST => TRUE,
+            CURLOPT_RETURNTRANSFER => TRUE,
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json'
+            ),
+            CURLOPT_POSTFIELDS => json_encode($postData)
+        ));
+    
+        $response = curl_exec($ch);
 
-        $context = stream_context_create([
-            'http' => [
-                'ignore_errors' => true,
-                'method' => 'POST',
-                'header' => implode("\r\n", $header),
-                'content' => json_encode(""),
-            ],
-        ]);
-
-        //$response = file_get_contents('http://192.168.11.96:8081/ehrd/line-bot' , false, $context);
-        return "postFoodServer(): response: ";
+        if($response === null ){
+            return "request is null !! :(("
+            die(curl_error($ch));
+        }
+    
+        if($response === FALSE){
+            return "request fail!! :(("
+            die(curl_error($ch));
+        }
+    
+        // Decode the response
+        $responseData = json_decode($response, TRUE);
+    
+        // Close the cURL handler
+        curl_close($ch);
+    
+        // Print the date from the response
+        return $responseData;
     }
 
     private function sign($body)
