@@ -168,7 +168,7 @@ class LINEBotTiny
         curl_close($ch);
     
         // Print the date from the response
-        return $responseData;
+        return "postFoodServer()!";
     }
 
     private function sign($body)
