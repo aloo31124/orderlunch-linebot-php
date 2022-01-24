@@ -50,7 +50,7 @@ function getToken(){
     }
     catch (Exception $e) 
     {
-        return  ' getToken() Caught exception: '.$e ,  $e->getMessage(), "\n";
+        return  ' getToken() Caught exception: ' ,  $e->getMessage(), "\n";
     }
     return 'error final !! ';
 }

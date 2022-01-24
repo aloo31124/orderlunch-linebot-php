@@ -163,7 +163,7 @@ class LINEBotTiny
         } 
         catch (Exception $e) 
         {
-            return  ' postFoodServer() Caught exception: '.$e ,  $e->getMessage(), "\n";
+            return  ' postFoodServer() Caught exception: ' ,  $e->getMessage(), "\n";
         }
         
         return "error final !! ";
