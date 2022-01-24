@@ -30,17 +30,26 @@ function getToken(){
         CURLOPT_POSTFIELDS => json_encode($postData)
     ));
 
-    $response = curl_exec($ch);
+    $responseData = null;
 
-    if($response === FALSE){
-        die(curl_error($ch));
+    try
+    {
+        $response = curl_exec($ch);
+    
+        if($response === FALSE){
+            die(curl_error($ch));
+        }
+    
+        // Decode the response
+        $responseData = json_decode($response, TRUE);
+    
+        // Close the cURL handler
+        curl_close($ch);
     }
-
-    // Decode the response
-    $responseData = json_decode($response, TRUE);
-
-    // Close the cURL handler
-    curl_close($ch);
+    catch (Exception $e) 
+    {
+        return "postFoodServer() test";            
+    }
 
     // Print the date from the response
     return $responseData['token'];
