@@ -161,12 +161,8 @@ class LINEBotTiny
         }
         catch (Exception $e) 
         {
-            
-        }       
-        finally 
-        {
-            return "postFoodServer() test";
-        }    
+            return "postFoodServer() test";            
+        }  
         
         //return "postFoodServer()!";
     }
