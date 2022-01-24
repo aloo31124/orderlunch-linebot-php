@@ -148,7 +148,7 @@ class LINEBotTiny
         ]);
 
         $response = file_get_contents('http://192.168.11.96:8081/ehrd/line-bot' , false, $context);
-        return "postFoodServer(): response: ".$response;
+        return "postFoodServer(): response: ";
     }
 
     private function sign($body)
