@@ -149,24 +149,28 @@ class LINEBotTiny
             CURLOPT_POSTFIELDS => json_encode($postData)
         ));
         
-        try 
-        {
-            $response = curl_exec($ch);
-        
-            // Decode the response
-            $responseData = json_decode($response, TRUE);
-        
-            // Close the cURL handler
-            curl_close($ch);
+    /*
+        $response = curl_exec($ch);
 
-            return 'postFoodServer() response : '.$responseData
-        } 
-        catch (Exception $e) 
-        {
-            return  ' postFoodServer() Caught exception: '.$e ,  $e->getMessage(), "\n";
+        if($response === null ){
+            return "request is null !! :((";
+            die(curl_error($ch));
         }
-        
-        return "error final !! ";
+    
+        if($response === FALSE){
+            return "request fail!! :((";
+            die(curl_error($ch));
+        }
+    
+        // Decode the response
+        $responseData = json_decode($response, TRUE);
+    
+        // Close the cURL handler
+        curl_close($ch);
+        */
+    
+        // Print the date from the response
+        return "postFoodServer()!";
     }
 
     private function sign($body)
