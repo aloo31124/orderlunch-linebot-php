@@ -152,12 +152,12 @@ class LINEBotTiny
         $response = curl_exec($ch);
 
         if($response === null ){
-            return "request is null !! :(("
+            return "request is null !! :((";
             die(curl_error($ch));
         }
     
         if($response === FALSE){
-            return "request fail!! :(("
+            return "request fail!! :((";
             die(curl_error($ch));
         }
     
