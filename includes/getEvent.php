@@ -7,7 +7,7 @@ if (strtolower($message['text']) == "get event" || $message['text'] == "取得�
         'messages' => array(
             array(
                 'type' => 'text',
-                'text' => "OnMessage 訊息事件 : "                        
+                'text' => "OnMessage 訊息事件 2 : "                        
                         ."\n事件屬性 event.type:".$event["type"]
                         ."\n"
                         ."\n訊息屬性 event.message.type:".$event["message"]["type"]                
@@ -23,7 +23,11 @@ if (strtolower($message['text']) == "get event" || $message['text'] == "取得�
                         ."\n reply token : ".$event["replyToken"]
                         ."\n mode(?) : ".$event["mode"]
                         ."\n"
-                        ."\n完整 event: ".json_encode($event)
+                        ."\n完整 event: "
+                        ."\n".json_encode($event)
+                        ."\n"
+                        ."\n user proFile : "
+                        ."\n".$client->getUserProfile($event["source"]["userId"])
             )
         )
     ));
