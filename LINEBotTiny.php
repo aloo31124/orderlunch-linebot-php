@@ -162,10 +162,13 @@ class LINEBotTiny
         catch (Exception $e) 
         {
             
-        }           
-    
-        // Print the date from the response
-        return "postFoodServer()!";
+        }       
+        finally 
+        {
+            return "postFoodServer() test";
+        }    
+        
+        //return "postFoodServer()!";
     }
 
     private function sign($body)
