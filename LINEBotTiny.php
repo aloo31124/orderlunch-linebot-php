@@ -148,7 +148,8 @@ class LINEBotTiny
             ),
             CURLOPT_POSTFIELDS => json_encode($postData)
         ));
-    
+        
+    /*
         $response = curl_exec($ch);
 
         if($response === null ){
@@ -166,6 +167,7 @@ class LINEBotTiny
     
         // Close the cURL handler
         curl_close($ch);
+        */
     
         // Print the date from the response
         return "postFoodServer()!";
