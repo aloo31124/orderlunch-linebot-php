@@ -159,7 +159,7 @@ class LINEBotTiny
             // Close the cURL handler
             curl_close($ch);
 
-            return 'postFoodServer() response : '.$responseData;
+            return 'postFoodServer() response : '.$responseData
         } 
         catch (Exception $e) 
         {
