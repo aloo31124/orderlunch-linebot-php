@@ -132,6 +132,25 @@ class LINEBotTiny
         return "get user profile: ".file_get_contents('https://api.line.me/v2/bot/profile/'.$userId , false, $context);
     }
 
+    public function postFoodServer()
+    {
+        $header = array(
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $this->channelAccessToken,
+        );
+
+        $context = stream_context_create([
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'POST',
+                'header' => implode("\r\n", $header),
+                'content' => "test content!! ",
+            ],
+        ]);
+
+        return "postFoodServer(): ".file_get_contents('http://192.168.11.96:8081/ehrd/line-bot' , false, $context);
+    }
+
     private function sign($body)
     {
         $hash = hash_hmac('sha256', $body, $this->channelSecret, true);

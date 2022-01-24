@@ -59,11 +59,12 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text': //訊息為文字
-                    require_once('includes/text.php'); //Type: Text
+                    require_once('includes/text.php'); //Type: Text                    
                     require_once('includes/getEvent.php');
                     require_once('includes/getLineBotServerInsideIp.php');
                     require_once('includes/getPlacesApi.php');
                     require_once('includes/getUserApi.php');
+                    require_once('includes/postFoodServer.php'); 
                     require_once('includes/postTokenApi.php');
                     require_once('includes/postPlacesApi.php');
                     require_once('includes/image.php'); //Type: Image
