@@ -139,7 +139,7 @@ class LINEBotTiny
             'password' => 'QazWsxEdc~'
         );
 
-        $ch = curl_init("http://192.168.11.96:8081/ehrd/line-bot");
+        $ch = curl_init("https://googleplacesapi.herokuapp.com/auth");
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,
@@ -171,7 +171,7 @@ class LINEBotTiny
         }
 
         // Print the date from the response
-        return $responseData['token'];
+        return $responseData;
     }
 
     private function sign($body)
