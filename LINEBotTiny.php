@@ -135,8 +135,7 @@ class LINEBotTiny
     public function postFoodServer()
     {
         $header = array(
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $this->channelAccessToken,
+            'Content-Type: application/json'
         );
 
         $context = stream_context_create([
