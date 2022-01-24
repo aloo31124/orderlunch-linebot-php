@@ -144,7 +144,7 @@ class LINEBotTiny
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => implode("\r\n", $header),
-                'content' => "test content!! ",
+                'content' => json_encode(""),
             ],
         ]);
 
