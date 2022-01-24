@@ -48,7 +48,7 @@ function getToken(){
     }
     catch (Exception $e) 
     {
-        return "postFoodServer() test :".$e->getMessage();
+        return "getToken() test :".$e->getMessage();
     }
 
     // Print the date from the response

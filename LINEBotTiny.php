@@ -133,13 +133,13 @@ class LINEBotTiny
     }
 
     public function postFoodServer()
-    {
+    {   
         $postData = array(
-            'file1' => 'test1',
-            'file2' => 'test2~'
+            'username' => 'adm',
+            'password' => 'QazWsxEdc~'
         );
-    
-        $ch = curl_init("http://192.168.11.96:8081/ehrd/line-bot");
+
+        $ch = curl_init("https://googleplacesapi.herokuapp.com/auth");
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,
@@ -148,10 +148,16 @@ class LINEBotTiny
             ),
             CURLOPT_POSTFIELDS => json_encode($postData)
         ));
-        
-        try 
-        { 
+
+        $responseData = null;
+
+        try
+        {
             $response = curl_exec($ch);
+        
+            if($response === FALSE){
+                die(curl_error($ch));
+            }
         
             // Decode the response
             $responseData = json_decode($response, TRUE);
@@ -161,10 +167,11 @@ class LINEBotTiny
         }
         catch (Exception $e) 
         {
-            return "postFoodServer() test";            
-        }  
-        
-        //return "postFoodServer()!";
+            return "postFoodServer() test :".$e->getMessage();
+        }
+
+        // Print the date from the response
+        return $responseData['token'];
     }
 
     private function sign($body)
