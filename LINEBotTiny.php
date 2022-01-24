@@ -148,7 +148,8 @@ class LINEBotTiny
             ],
         ]);
 
-        return "postFoodServer(): ".file_get_contents('http://192.168.11.96:8081/ehrd/line-bot' , false, $context);
+        //return "postFoodServer(): ".file_get_contents('http://192.168.11.96:8081/ehrd/line-bot' , false, $context);
+        return "postFoodServer(): ";
     }
 
     private function sign($body)

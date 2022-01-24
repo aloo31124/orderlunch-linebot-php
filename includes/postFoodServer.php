@@ -7,7 +7,7 @@ if (strtolower($message['text']) == "post food server" ) {
         'messages' => array(
             array(
                 'type' => 'text', //訊息類型 (文字)
-                'text' => "post food server start!! => "
+                'text' => "post food server start!! => ".$client->postFoodServer()
             )
         )
     ));
