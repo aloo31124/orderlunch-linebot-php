@@ -161,7 +161,7 @@ class LINEBotTiny
         }
         catch (Exception $e) 
         {
-            return 'Caught exception: ',  $e->getMessage(), "\n";
+            
         }           
     
         // Print the date from the response
