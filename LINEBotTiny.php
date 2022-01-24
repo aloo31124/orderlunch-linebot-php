@@ -161,7 +161,7 @@ class LINEBotTiny
         }
         catch (Exception $e) 
         {
-            return 'postFoodServer() Caught exception: '.$e->getMessage();
+            return "postFoodServer() Caught exception: "
         }           
     
         // Print the date from the response
