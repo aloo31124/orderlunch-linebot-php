@@ -150,7 +150,8 @@ class LINEBotTiny
         ));
 
         $responseData = null;
-
+        return "postFoodServer() test!! "
+        /* 
         try
         {
             $response = curl_exec($ch);
@@ -172,6 +173,7 @@ class LINEBotTiny
 
         // Print the date from the response
         return $responseData;
+         */
     }
 
     private function sign($body)

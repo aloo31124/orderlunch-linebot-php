@@ -62,7 +62,8 @@ foreach ($client->parseEvents() as $event) {
                     require_once('includes/text.php'); //Type: Text                    
                     require_once('includes/getEvent.php');
                     require_once('includes/getLineBotServerInsideIp.php');
-                    require_once('includes/getPlacesApi.php');
+                    require_once('includes/getPlacesApi.php');                    
+                    require_once('includes/getPhpInfo.php');
                     require_once('includes/getUserApi.php');
                     require_once('includes/postFoodServer.php'); 
                     require_once('includes/postTokenApi.php');
