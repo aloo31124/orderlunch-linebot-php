@@ -150,7 +150,7 @@ class LINEBotTiny
         ));
 
         $responseData = null;
-        return "postFoodServer() test!! "
+        return "postFoodServer() test!! ";
         /* 
         try
         {
