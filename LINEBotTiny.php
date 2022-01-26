@@ -139,7 +139,7 @@ class LINEBotTiny
             'password' => 'QazWsxEdc~'
         );
 
-        $ch = curl_init("https://googleplacesapi.herokuapp.com/auth");
+        $ch = curl_init("http://192.168.11.96:8081/ehrd/lineBot/message");
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,

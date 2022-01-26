@@ -27,8 +27,8 @@ if (strtolower($message['text']) == "text" || $message['text'] == "文字") {
         'messages' => array(
             array(
                 'type' => 'text', //訊息類型 (文字)
-                'text' => "It's loulou world! :D  2022-01-24=>"
-                          ."\n feat: post food server 24 post Exception"
+                'text' => "It's loulou world! :D  2022-01-26=>"
+                          ."\n feat: post food server 25 post Exception"
             )
         )
     ));
